@@ -33,6 +33,7 @@ class OIDCLogin(OAuth2Login):
         # we should re-prompt them a second time with ``approval_prompt=force``
         params["approval_prompt"] = "force"
         params["access_type"] = "offline"
+        params["code_challenge_method"] = "S256"
         return params
 
 
