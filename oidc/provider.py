@@ -27,8 +27,8 @@ class OIDCLogin(OAuth2Login):
         super().__init__(client_id=client_id)
 
     def get_authorize_params(self, state, redirect_uri):
-        redirect = "http://sentry-prod.x5m.x5.ru"
-        params = super().get_authorize_params(state, redirect)
+        #redirect = "http://sentry-prod.x5m.x5.ru"
+        params = super().get_authorize_params(state, redirect_uri)
         # TODO(dcramer): ideally we could look at the current resulting state
         # when an existing auth happens, and if they're missing a refresh_token
         # we should re-prompt them a second time with ``approval_prompt=force``
