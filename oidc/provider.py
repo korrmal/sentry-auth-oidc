@@ -109,7 +109,8 @@ class OIDCProvider(OAuth2Provider):
 
         bearer_token = data["access_token"]
         user_info = self.get_user_info(bearer_token)
-
+        print(user_info.get("email"))
+        print(user_info.get("name"))
         # XXX(epurkhiser): We initially were using the email as the id key.
         # This caused account dupes on domain changes. Migrate to the
         # account-unique sub key.
